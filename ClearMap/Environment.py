@@ -43,6 +43,7 @@ import ClearMap.Tests.Files as tfs
 
 import ClearMap.Visualization.Plot3d as p3d
 import ClearMap.Visualization.Color as col
+from ClearMap.Visualization import JupNtbk_vis as jvis
 
 import ClearMap.Utils.TagExpression as te
 import ClearMap.Utils.Timer as tmr
@@ -88,4 +89,4 @@ __all__ = ['sys', 'os', 'glob', 'np', 'plt', 'reload',
            'ano', 'res', 'elx', 'st', 'stw',
            'clp', 'rnk', 'se', 'dif', 'skl', 'skp', 'vf',
            'grp', 'gp', 'me', 'mr', 'vox',
-           'vasc', 'cells'];
+           'vasc', 'cells','jvis'];
