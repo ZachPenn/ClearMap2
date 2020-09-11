@@ -708,7 +708,7 @@ def prepare_annotation_files(slicing = None, orientation = None,
   if distance_to_surface_file is None:
     distance_to_surface_file = default_distance_to_surface_file;
 
-  files = [annotation_file, reference_file, distance_to_surface_file];
+  files = [annotation_file, reference_file];
   
   results = [];
   for f in files:
