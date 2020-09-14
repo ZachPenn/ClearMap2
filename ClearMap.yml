@@ -18,6 +18,7 @@ dependencies:
   - dask
   - graph-tool
   - holoviews
+  - h5py
   - matplotlib=3.1.1
   - opencv
   - natsort
