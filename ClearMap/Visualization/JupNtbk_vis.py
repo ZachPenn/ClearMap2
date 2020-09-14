@@ -1,3 +1,13 @@
+"""
+JupNtbk_vis module provides tools for interactive visualizations
+in Jupyter Notebook using Holoviews package.  
+
+Note
+----
+
+"""
+
+
 import holoviews as hv
 import numpy as np
 import SimpleITK as sitk
