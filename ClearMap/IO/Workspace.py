@@ -42,7 +42,8 @@ import ClearMap.Visualization.Plot3d as p3d
 default_file_type_to_name = odict(
     raw                       = "/Raw/raw_<X,2>_<Y,2>.npy",
     autofluorescence          = "/Autofluorescence/auto_<X,2>_<Y,2>.npy",
-    stitched                  = "stitched.npy", 
+    stitched                  = "stitched.npy",
+    hdf5                      = "data.hdf5",
     layout                    = "layout.lyt",
     background                = "background.npy",
     resampled                 = "resampled.tif",
@@ -54,9 +55,10 @@ file_type_synonyms = dict(
     r  = "raw",
     a  = "autofluorescence",
     st = "stitched",
+    h  = "hdf5",
     l  = "layout",
     bg = "background",
-    rs = "resampled"
+    rs = "resampled",
     );
   
 default_file_type_to_name_tube_map = default_file_type_to_name.copy();
