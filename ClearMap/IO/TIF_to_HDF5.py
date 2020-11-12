@@ -1,5 +1,5 @@
 """
-TIF_to_HDF5 module provides reading in of image folder 
+TIF_to_HDF5 module provides reading in of image folder and conversion to hdf5 dataset.
 
 Note
 ----
@@ -82,7 +82,7 @@ def get_img_info(img_files):
     return img_info
 
 
-def tiffolder_tohdf5(directory, img_ext='tif', output_file='output.hdf5', datasetname='signal', compression='lzf',
+def tiffolder_tohdf5(directory, img_ext='tif', output_file='output.hdf5', dsetname='signal', compression='lzf',
                      directory_out=None, buffer_size=100):
     """Creates hdf5 file with tif stack now represented as single 3d array
     Arguments
@@ -93,7 +93,7 @@ def tiffolder_tohdf5(directory, img_ext='tif', output_file='output.hdf5', datase
       The extension of file type (e.g. '.tif')
     output_file: str
       Name of hdf5 file
-    datasetname: str
+    dsetname: str
       The name of the dataset within the hdf5 file
     compression: str
       The compression formula used. Method 'lzf' is a fast and lossless compression.
@@ -123,16 +123,22 @@ def tiffolder_tohdf5(directory, img_ext='tif', output_file='output.hdf5', datase
             output_file)
     else:
         output_file = os.path.join(directory_out,output_file)
+        
 
-    with h5py.File(output_file, 'w') as f:
+
+    with h5py.File(output_file, 'a') as f:
 
         if os.path.exists(output_file):
             print('Opening hd5f file: {file}'.format(file=output_file))
         else:
             print('Creating hd5f file: {file}'.format(file=output_file))
+            
+        if ('/'+dsetname) in f:
+            print('Overwriting existing dataset: {x}'.format(x=dsetname))
+            del f[dsetname]
         
         stack = f.create_dataset(
-            name = datasetname, 
+            name = dsetname, 
             shape = (
                 img_info['n_files'],
                 img_info['h'],
@@ -140,7 +146,7 @@ def tiffolder_tohdf5(directory, img_ext='tif', output_file='output.hdf5', datase
             dtype = img_info['dtype'],
             compression = compression)   
         print('Creating dataset, {name}, of size={size}, type={type}'.format(
-            name = datasetname,
+            name = dsetname,
             size = stack.shape, 
             type = img_info['dtype']))
         
