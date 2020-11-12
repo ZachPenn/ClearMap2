@@ -6,10 +6,10 @@
 #
 
 #Updated by Zach Pennington 9/11/2020 to include
-#holoviews, opencv, simpleitk, dask, and xarray
+#holoviews, h5py, opencv, simpleitk, dask, and xarray
 
 
-name: ClearMap2
+name: clearmap2
 channels:
   - conda-forge
   - defaults
@@ -22,7 +22,8 @@ dependencies:
   - matplotlib=3.1.1
   - opencv
   - natsort
-  - pip
+  - plotly
+  - plotnine
   - python=3.7
   - pyopengl
   - pytorch
@@ -34,4 +35,5 @@ dependencies:
   - tifffile
   - vispy
   - xarray
+  - pip
 
