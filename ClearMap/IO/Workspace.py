@@ -40,12 +40,13 @@ import ClearMap.Visualization.Plot3d as p3d
 ###############################################################################
 
 default_file_type_to_name = odict(
-    raw                       = "/Raw/raw_<X,2>_<Y,2>.npy",
-    autofluorescence          = "/Autofluorescence/auto_<X,2>_<Y,2>.npy",
-    stitched                  = "stitched.npy",
+    raw                       = "fos.npy",
+    autofluorescence          = "auto.npy",
+    #stitched                  = "stitched.npy",
     hdf5                      = "data.hdf5",
-    layout                    = "layout.lyt",
-    background                = "background.npy",
+    slice_coords              = "coords.npy",
+    #layout                    = "layout.lyt",
+    #background                = "background.npy",
     resampled                 = "resampled.tif",
     resampled_to_auto         = 'elastix_resampled_to_auto',
     auto_to_reference         = 'elastix_auto_to_reference', 
@@ -81,8 +82,8 @@ file_type_synonyms.update(
 
 default_file_type_to_name_cell_map = default_file_type_to_name.copy();
 default_file_type_to_name_cell_map.update(
-    raw                       = "/Raw/Z<Z,4>.tif",
-    autofluorescence          = "/Autofluorescence/Z<Z,4>.tif",
+    raw                       = "fos.npy",#"/Raw/Z<Z,4>.tif",
+    autofluorescence          = "auto.npy",#"/Autofluorescence/Z<Z,4>.tif",
     cells                     = 'cells.npy',
     density                   = "density.tif",
     );    
