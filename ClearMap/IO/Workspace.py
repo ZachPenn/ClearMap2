@@ -354,7 +354,7 @@ class Workspace(object):
           files = self.file_list(k, extension='*');
           extensions = [io.file_extension(f) for f in files];
           extensions = np.unique(extensions);
-          #print(extensions)
+          print(extensions)
         else:
           extensions = [self.extension(k)];
         
