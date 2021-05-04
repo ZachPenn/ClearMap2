@@ -314,7 +314,7 @@ def hdf5_bgsubtract(
             f[dset_bg],
             chunks = chunksize)
         sig = image - bg
-        sig.to_hdf5(hdf5_file,('/'+'bg_rmv'))
+        sig.to_hdf5(hdf5_file,('/'+dset_out))
         
         print('Results of background subtraction written to {y}'.format(
             y = '/'.join([hdf5_file,dset_out])))
